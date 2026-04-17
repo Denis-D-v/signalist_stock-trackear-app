@@ -6,13 +6,17 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:db": "node --env-file=.env scripts/test-db.mjs",
+    "test:db:crud": "node --env-file=.env scripts/test-db-crud.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "lucide-react": "^0.542.0",
+    "mongodb": "^7.1.1",
+    "mongoose": "^9.4.1",
     "next": "15.5.2",
     "radix-ui": "^1.4.3",
     "react": "19.1.0",
