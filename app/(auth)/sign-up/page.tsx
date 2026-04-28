@@ -6,8 +6,13 @@ import CountrySelectField from '@/components/forms/CountrySelectField';
 import SelectField from '@/components/forms/SelectField';
 import { INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS } from '@/lib/constans';
 import FooterLink from '@/components/forms/FooterLink';
+import {signUpWithEmail} from "@/lib/actions/auth.actions";
+import {useRouter} from "next/navigation";
+import {toast} from "sonner";
+
 
 const SignUp = () => {
+  const router = useRouter();
   const methods = useForm<SignUpFormData>({
     defaultValues: {
       fullName: '',
@@ -30,11 +35,22 @@ const SignUp = () => {
 
   const onSubmit = async (data: SignUpFormData) => {
     try {
-      console.log(data);
+        const result = await signUpWithEmail(data);
+        if(result.success) {
+          router.push('/');
+          return;
+        }
+
+        toast.error('Sign up failed', {
+          description: result.error || 'Failed to create an account.',
+        });
     } catch (e) {
-      console.error(e);
+        console.error(e);
+        toast.error('Sign up failed', {
+            description: e instanceof Error ? e.message : 'Failed to create an account.'
+        })
     }
-  };
+}
   return (
     <FormProvider {...methods}>
       <h1 className="form-title">Sign Up & Personalize</h1>
