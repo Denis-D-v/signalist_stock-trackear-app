@@ -1,12 +1,11 @@
-# Signalist Stock Tracker
 
-                           ![StockMarketAppI](https://github.com/user-attachments/assets/e58fc5c4-509d-440e-96fa-1116796dffa4)
+<img src="https://github.com/user-attachments/assets/e58fc5c4-509d-440e-96fa-1116796dffa4" alt="StockMarketAppI" width="100%" />
 
 
 A robust web application designed for real-time stock price tracking, personalized market alerts, and AI-driven company insights. The project leverages an event-driven architecture to decouple heavy analytical computations from the main application thread.
 
-## Features
 
+## Features
 <p>👉 <strong>Real-Time Stock Watchlists</strong> – Monitor active stock tickers, organize financial data, and group preferred assets into highly personalized watchlists.</p>
 
 <p>👉 <strong>Onboarding Insights</strong> – Collect customized user metadata including specific investment goals, personal risk tolerance, and targeted industries during signup.</p>
